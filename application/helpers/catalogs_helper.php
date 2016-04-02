@@ -17,7 +17,11 @@
 	function getcart(){
 		$ci = & get_instance();
 		$data = $ci->getsessiondata();
-		return $data["product"];
+		if(isset($data["product"])){
+			return $data["product"];
+		}else{
+			return array();
+		}
 	}
 
 ?>

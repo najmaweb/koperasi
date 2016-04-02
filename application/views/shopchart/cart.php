@@ -194,14 +194,14 @@
                                             </td>
 
                                             <td class="product-price">
-                                                <span class="amount"><?php echo number_format($product["sellprice"],2);?></span> 
+                                                <span class="amount" thisval="<?php echo $product["sellprice"];?>"><?php echo number_format($product["sellprice"],2);?></span> 
                                             </td>
 
                                             <td class="product-quantity">
                                                 <div class="quantity buttons_added">
-                                                    <input type="button" class="minus" value="-">
+                                                    <input type="button" class="minus buttonReducer" value="-">
                                                     <input type="number" size="4" class="input-text qty text" title="Qty" value="1" min="0" step="1">
-                                                    <input type="button" class="plus" value="+">
+                                                    <input type="button" class="plus buttonAdder" value="+">
                                                 </div>
                                             </td>
 
@@ -661,6 +661,26 @@
 				.fail(function(err){
 					console.log("Err",err);
 				});
+			});
+			$(".buttonAdder").click(function(){
+				that = $(this);
+				preval = parseInt(that.prev().val());
+				that.prev().val(preval+1);
+				console.log("increased",that.prev().val());
+					var itemprice = that.parent().parent().prev().find(".amount").attr("thisval");
+					var totalprice = that.parent().parent().next().find(".amount").html();
+					that.parent().parent().next().find(".amount").html((parseInt(itemprice)*parseInt(that.prev().val())).toLocaleString());
+			});
+			$(".buttonReducer").click(function(){
+				that = $(this);
+				nexval = parseInt(that.next().val());
+				if(nexval>0){
+					that.next().val(nexval-1);
+					console.log("decreased",that.next().val());
+					var itemprice = that.parent().parent().prev().find(".amount").attr("thisval");
+					var totalprice = that.parent().parent().next().find(".amount").html();
+					that.parent().parent().next().find(".amount").html((parseInt(itemprice)*parseInt(that.next().val())).toLocaleString());
+				}
 			});
 		}(jQuery))
     </script>
