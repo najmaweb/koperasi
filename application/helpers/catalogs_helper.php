@@ -23,5 +23,12 @@
 			return array();
 		}
 	}
-
+	function getfirstproducts($active = '1',$orderby = "name",$order = "asc"){
+		$ci = & get_instance();
+		$query = "select id,name,image,sellprice,buyprice,dellprice,description from catalogs ";
+		$query.= "where active='".$active."' ";
+		$query.= " order by '".$orderby."' '".$order."' limit 1,4";
+		$result = $ci->db->query($query);
+		return $result->result();		
+	}
 ?>

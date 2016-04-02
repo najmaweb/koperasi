@@ -47,4 +47,14 @@ class Shop extends CI_Controller{
 		$data["carts"] = getcart();
 		$this->load->view("shopchart/cart",$data);
 	}
+	function checkout(){
+		$data["products"] = getcatalogs("1","name","asc");
+		$data["carts"] = getcart();
+		$this->load->view("shopchart/checkout",$data);
+	}
+	function gallery(){
+		//$data["products"] = getfirstproducts();
+		$data["products"] = getcatalogs();
+		$this->load->view("shopchart/shop",$data);
+	}
 } 
