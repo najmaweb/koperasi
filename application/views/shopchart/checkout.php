@@ -15,7 +15,7 @@
                             <li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
                             <li><a href="cart.html"><i class="fa fa-user"></i> My Cart</a></li>
                             <li><a href="checkout.html"><i class="fa fa-user"></i> Checkout</a></li>
-                            <li><a href="#"><i class="fa fa-user"></i> Login</a></li>
+                            <li><a href="<?php echo base_url()?>shop/logout"><i class="fa fa-user"></i> Logout</a></li>
                         </ul>
                     </div>
                 </div>
@@ -806,13 +806,13 @@
                                                 <p id="shipping_first_name_field" class="form-row form-row-first validate-required">
                                                     <label class="" for="shipping_first_name">First Name <abbr title="required" class="required">*</abbr>
                                                     </label>
-                                                    <input type="text" value="" placeholder="" id="shipping_first_name" name="shipping_first_name" class="input-text ">
+                                                    <input type="text" value="<?php echo $member["fname"];?>" placeholder="" id="shipping_first_name" name="shipping_first_name" class="input-text ">
                                                 </p>
 
                                                 <p id="shipping_last_name_field" class="form-row form-row-last validate-required">
                                                     <label class="" for="shipping_last_name">Last Name <abbr title="required" class="required">*</abbr>
                                                     </label>
-                                                    <input type="text" value="" placeholder="" id="shipping_last_name" name="shipping_last_name" class="input-text ">
+                                                    <input type="text" value="<?php echo $member["lname"];?>" placeholder="" id="shipping_last_name" name="shipping_last_name" class="input-text ">
                                                 </p>
                                                 <div class="clear"></div>
 

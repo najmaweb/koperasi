@@ -2,7 +2,9 @@
 class Shop extends CI_Controller{
 	function __construct(){
 		parent::__construct();
+		$this->load->helper("user");
 		$this->load->helper("catalogs");
+		$this->load->helper("members");
 	}
 	function index(){
 		$data["products"] = getcatalogs("1","name","asc");
@@ -50,11 +52,38 @@ class Shop extends CI_Controller{
 	function checkout(){
 		$data["products"] = getcatalogs("1","name","asc");
 		$data["carts"] = getcart();
+		$member = memberhaslogin();
+		if(!$member){
+			redirect(base_url()."shop/login");
+		}
+		$data["member"] = $member;
 		$this->load->view("shopchart/checkout",$data);
+	}
+	function login(){
+		$data["products"] = getcatalogs("1","name","asc");
+		$data["carts"] = getcart();
+		$data["haslogin"] = memberhaslogin();
+		$this->load->view("shopchart/login",$data);
+	}
+	function signin(){
+		$params = $this->input->post();
+		$user = memberchecklogin($params["email"],$params["password"]);
+		if(!$user){
+			echo "Cannot Login";
+		}else{
+			echo "Login success ".$user->name;
+			$data["member"] = $user;
+			redirect(base_url()."shop/checkout");
+		}		
 	}
 	function gallery(){
 		//$data["products"] = getfirstproducts();
 		$data["products"] = getcatalogs();
 		$this->load->view("shopchart/shop",$data);
+	}
+	function logout(){
+		memberlogout();
+		$this->resetchart();
+		redirect(base_url()."shop/gallery");
 	}
 } 
