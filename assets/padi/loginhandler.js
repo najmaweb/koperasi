@@ -32,6 +32,7 @@ $("#modallogin").click(function(){
 		console.log("Res login",res);
 		if(res==="Cannot Login"){
 			console.log("Password / email salah");
+			$("#kwarning").modal();
 		}else{
 			$("#btnlogout").show();
 			$("#btnlogin").hide();

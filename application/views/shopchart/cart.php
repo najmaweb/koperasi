@@ -4,7 +4,7 @@
 	<?php $this->load->view("shopchart/head");?>
   </head>
   <body>
-   
+   <?php $this->load->view("shopchart/dialogs");?>
 <?php $this->load->view("shopchart/headerarea");?>    
     <div class="site-branding-area">
         <div class="container">
