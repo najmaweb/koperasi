@@ -37,7 +37,26 @@
                         </div>
 
                         <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" val="<?php echo $product->name;?>"  myid="<?php echo $product->id;?>" sellprice="<?php echo $product->sellprice;?>" >Add to cart</a>
+                            <a class="add_to_cart_button addtochart" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" val="<?php echo $product->name;?>"  myid="<?php echo $product->id;?>" sellprice="<?php echo $product->sellprice;?>" >Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <?php }?>
+            </div>
+            <div class="row">
+                <?php foreach($products2 as $product){?>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-shop-product">
+                        <div class="product-upper">
+                            <img  src="<?php echo $product->image;?>" alt="">
+                        </div>
+                        <h2><a href=""><?php echo $product->name;?></a></h2>
+                        <div class="product-carousel-price">
+                            <ins><sup>IDR</sup><?php echo number_format($product->sellprice);?></ins> <del><sup>IDR</sup><?php echo number_format($product->dellprice);?></del>
+                        </div>
+
+                        <div class="product-option-shop">
+                            <a class="add_to_cart_button addtochart" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" val="<?php echo $product->name;?>"  myid="<?php echo $product->id;?>" sellprice="<?php echo $product->sellprice;?>" >Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -54,11 +73,10 @@
                                 <span aria-hidden="true">&laquo;</span>
                               </a>
                             </li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
+                            <?php for($x=1;$x<=$pageamount;$x++){?>
+								<?php $page = ($x-1)*8?>
+								<li><a href="<?php echo base_url();?>shop/gallery/<?php echo $page;?>"><?php echo $x;?></a></li>
+							<?php }?>
                             <li>
                               <a href="#" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>

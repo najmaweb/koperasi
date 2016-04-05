@@ -16,12 +16,14 @@ class Catalogs extends CI_Controller{
 		}
 	}
 	public function profile(){
-		$data["obj"] = getcatalog($this->uri->segment(3));
-		$this->load->view("catalogs/profile",$data);
+		if(islogin()){
+			$data["obj"] = getcatalog($this->uri->segment(3));
+			$this->load->view("catalogs/profile",$data);
+		}
 	}
 	public function save(){
 		$params = $this->input->post();
-		$query = "insert into catalogs (name,image,description) values ('".$params["name"]."','".$params["image"]."','".$params["description"]."')";
+		$query = "insert into catalogs (name,image,sellprice,dellprice,buyprice,description) values ('".$params["name"]."','".$params["image"]."','".$params["sellprice"]."','".$params["dellprice"]."','".$params["buyprice"]."','".$params["description"]."')";
 		$this->db->query($query);
 		echo $this->db->insert_id();
 	}
@@ -33,7 +35,7 @@ class Catalogs extends CI_Controller{
 	}
 	public function update(){
 		$params = $this->input->post();
-		$query = "update catalogs set name='".$params["name"]."',image='".$params["image"]."',description='".$params["description"]."' where id='".$params["id"]."'";
+		$query = "update catalogs set name='".$params["name"]."',image='".$params["image"]."',sellprice='".$params["sellprice"]."',dellprice='".$params["dellprice"]."',buyprice='".$params["buyprice"]."',description='".$params["description"]."' where id='".$params["id"]."'";
 		$this->db->query($query);
 		echo $query;
 	}

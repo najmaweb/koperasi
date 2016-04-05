@@ -83,8 +83,20 @@
                   <form role="form">
                     <!-- text input -->
                     <div class="form-group">
-                      <label>Nama depan</label>
-                      <input type="text" class="form-control" placeholder="Nama Depan ..." id="name" value="<?php echo $obj->name;?>"/>
+                      <label>Nama</label>
+                      <input type="text" class="form-control" placeholder="Nama ..." id="name" value="<?php echo $obj->name;?>"/>
+                    </div>
+                    <div class="form-group">
+                      <label>Harga Beli</label>
+                      <input type="text" class="form-control" placeholder="Harga Beli ..." id="buyprice" value="<?php echo $obj->sellprice;?>"/>
+                    </div>
+                    <div class="form-group">
+                      <label>Harga Jual</label>
+                      <input type="text" class="form-control" placeholder="Harga Jual ..." id="sellprice" value="<?php echo $obj->sellprice;?>"/>
+                    </div>
+                    <div class="form-group">
+                      <label>Harga Hapus</label>
+                      <input type="text" class="form-control" placeholder="Harga Hapus ..." id="dellprice" value="<?php echo $obj->sellprice;?>"/>
                     </div>
 
                     <!-- textarea -->
@@ -159,6 +171,9 @@
 					data:{
 						id:$("#catalogId").val(),
 						name:$("#name").val(),
+						sellprice:$("#sellprice").val(),
+						dellprice:$("#dellprice").val(),
+						buyprice:$("#buyprice").val(),
 						image:$("#picture").attr("src"),
 						description:$("div.nicEdit-main").html()
 					},

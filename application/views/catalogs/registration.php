@@ -83,7 +83,19 @@
                     <!-- text input -->
                     <div class="form-group">
                       <label>Nama</label>
-                      <input type="text" class="form-control" placeholder="Nama Depan ..." id="name" />
+                      <input type="text" class="form-control" placeholder="Nama  ..." id="name" />
+                    </div>
+                    <div class="form-group">
+                      <label>Buy Price</label>
+                      <input type="text" class="form-control" placeholder="Harga Beli ..." id="buyprice" />
+                    </div>
+                    <div class="form-group">
+                      <label>Harga Jual</label>
+                      <input type="text" class="form-control" placeholder="Harga Jual ..." id="sellprice" />
+                    </div>
+                    <div class="form-group">
+                      <label>Harga Hapus</label>
+                      <input type="text" class="form-control" placeholder="Harga Hapus ..." id="dellprice" />
                     </div>
 
                     <!-- textarea -->
@@ -157,6 +169,9 @@
 					url:"<?php echo base_url();?>catalogs/save",
 					data:{
 						name:$("#name").val(),
+						sellprice:$("#sellprice").val(),
+						dellprice:$("#dellprice").val(),
+						buyprice:$("#buyprice").val(),
 						image:$("#picture").attr("src"),
 						description:$("div.nicEdit-main").html()
 					},

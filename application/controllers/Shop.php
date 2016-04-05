@@ -47,12 +47,14 @@ class Shop extends CI_Controller{
 		$this->session->set_userdata(array("product"=>array()));
 	}
 	function chart(){
+		$data["title"] = "Cart";
 		$data["products"] = getcatalogs("1","name","asc");
 		$data["carts"] = getcart();
 		$data["menus"] = getmenu();
 		$this->load->view("shopchart/cart",$data);
 	}
 	function checkout(){
+		$data["title"] = "Checkout";
 		$data["products"] = getcatalogs("1","name","asc");
 		$data["carts"] = getcart();
 		$member = memberhaslogin();
@@ -82,9 +84,13 @@ class Shop extends CI_Controller{
 		}		
 	}
 	function gallery(){
-		//$data["products"] = getfirstproducts();
-		$data["products"] = getcatalogs();
+		$data["title"] = "Gallery";
+		$offset = ($this->uri->total_segments()>2)?$this->uri->segment(3):1;
+		$data['pageamount'] = ceil(getamount()/8);
+		$data["products"] = getcatalogs('1',$offset,4,"name","asc");
+		$data["products2"] = getcatalogs('1',$offset+4,4,"name","asc");
 		$data["menus"] = getmenu();
+		$data['offset'] = $offset;
 		$this->load->view("shopchart/shop",$data);
 	}
 	function logout(){

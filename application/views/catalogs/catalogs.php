@@ -55,7 +55,7 @@
 								<span class="sr-only">Toggle Dropdown</span>
 							  </button>
 							  <ul class="dropdown-menu" role="menu">
-								<li><a href="<?php echo baseurl();?>catalogs/profile/<?php echo $obj->id;?>">Profile</a></li>
+								<li><a href="<?php echo baseurl();?>catalogs/profile/<?php echo $obj->id;?>">Edit</a></li>
 								<li class="divider"></li>
 								<li class="remove pointer"><a>Masukkan ke <i class="fa fa-trash-o pointer"></i></a></li>
 							  </ul>

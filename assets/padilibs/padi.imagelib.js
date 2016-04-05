@@ -5,9 +5,9 @@
  * */
 function resizeImage(url, callback){
 	var canvas = document.createElement("canvas");
-	var MAX_WIDTH_ALLOWED = 300;//1600;
+	var MAX_WIDTH_ALLOWED = 200;//1600;
 	var MAX_HEIGHT = 0;
-	canvas.width = 300;//1600;
+	canvas.width = 200;//1600;
 	var img = new Image();
 	img.onload = function(){
 		MAX_HEIGHT = img.height * MAX_WIDTH_ALLOWED / img.width;
