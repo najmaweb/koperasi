@@ -1,15 +1,41 @@
+var hostname = "http://koperasi/";
+$.ajax({
+	url:hostname+"shop/checklogin",
+	type:"post"
+})
+.done(function(res){
+	console.log("RES check ligin",res);
+	if(res==='haslogin'){
+		console.log("return true");
+		$("#btnlogout").show();
+		$("#btnlogin").hide();					
+	};
+	if(res==='hasnotlogin'){
+		$("#btnlogout").hide();
+		$("#btnlogin").show();
+		console.log("return false");
+	}
+})
+.fail(function(err){
+	console.log("Err",err);
+});
+
 $("#modallogin").click(function(){
 	console.log("login clicked");
+	
 	$.ajax({
-		url:"http://koperasi/shop/signin",
-		data:{email:"puji@padi.net.id",password:"puji"},
+		url:hostname+"shop/signin",
+		data:{email:$("#loginemail").val(),password:$("#loginpassword").val()},
 		type:"post"
 	})
 	.done(function(res){
 		console.log("Res login",res);
-		$("#btnlogout").show();
-		$("#btnlogin").hide();
-		
+		if(res==="Cannot Login"){
+			console.log("Password / email salah");
+		}else{
+			$("#btnlogout").show();
+			$("#btnlogin").hide();
+		}
 	})
 	.fail(function(err){
 		console.log("Err",err);
