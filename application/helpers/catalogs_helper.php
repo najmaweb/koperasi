@@ -4,6 +4,7 @@
 		$query = "select id,name,image,sellprice,buyprice,dellprice,description from catalogs ";
 		$query.= "where active='".$active."' ";
 		$query.= " order by '".$orderby."' '".$order."' ";
+		$query.= " limit 1,8";
 		$result = $ci->db->query($query);
 		return $result->result();
 	}
