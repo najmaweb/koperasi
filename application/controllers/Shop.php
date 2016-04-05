@@ -86,4 +86,12 @@ class Shop extends CI_Controller{
 		$this->resetchart();
 		redirect(base_url()."shop/gallery");
 	}
+	function checklogin(){
+		$result =  memberhaslogin();
+		if($result){
+			echo "haslogin";
+		}else{
+			echo "hasnotlogin";
+		}
+	}
 } 

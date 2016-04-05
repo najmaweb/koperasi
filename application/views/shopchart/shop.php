@@ -15,11 +15,8 @@
                             <li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
                             <li><a href="cart.html"><i class="fa fa-user"></i> My Cart</a></li>
                             <li><a href="checkout.html"><i class="fa fa-user"></i> Checkout</a></li>
-                            <?php if(memberhaslogin()){?>
                             <li id="btnlogout" class="loginout"><a><i class="fa fa-user"></i> Logout</a></li>
-							<?php }else{ ?>
                             <li id="btnlogin" class="loginout"><a><i class="fa fa-user"></i> Login</a></li>
-                            <?php }?>
                         </ul>
                     </div>
                 </div>
@@ -274,7 +271,26 @@
 					console.log("err",err);
 				});
 			});
-			
+			$.ajax({
+				url:"<?php echo base_url();?>shop/checklogin",
+				type:"post"
+			})
+			.done(function(res){
+				console.log("RES check ligin",res);
+				if(res==='haslogin'){
+					console.log("return true");
+					$("#btnlogout").show();
+					$("#btnlogin").hide();					
+				};
+				if(res==='hasnotlogin'){
+					$("#btnlogout").hide();
+					$("#btnlogin").show();
+					console.log("return false");
+				}
+			})
+			.fail(function(err){
+				console.log("Err",err);
+			});
 			$(".user-menu #btnlogin").click(function(){
 				$("#loginwindow").modal();
 			});
@@ -284,15 +300,13 @@
 				})
 				.done(function(res){
 					console.log("res logout",res);
-					//$(".loginout").html('<li id="btnlogin"><a><i class="fa fa-user loginout"></i> Login</a></li>');
-					$(".loginout").html('<a><i class="fa fa-user loginout"></i> Login</a>');
-					$(".loginout").attr('id',"btnlogin");
+					$("#btnlogout").hide();
+					$("#btnlogin").show();
 				})
 				.fail(function(err){
 					console.log("Err",err);
 				});
 			});
-
 		}(jQuery))
     </script>
   </body>

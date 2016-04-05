@@ -7,9 +7,9 @@ $("#modallogin").click(function(){
 	})
 	.done(function(res){
 		console.log("Res login",res);
-		//$(".loginout").html('<li id="btnlogout"><a><i class="fa fa-user loginout"></i> Logout</a></li>');
-		$(".loginout").html('<a><i class="fa fa-user loginout"></i> Logout</a>');
-		$(".loginout").attr('id',"btnlogout");
+		$("#btnlogout").show();
+		$("#btnlogin").hide();
+		
 	})
 	.fail(function(err){
 		console.log("Err",err);
