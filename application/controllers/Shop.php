@@ -5,9 +5,11 @@ class Shop extends CI_Controller{
 		$this->load->helper("user");
 		$this->load->helper("catalogs");
 		$this->load->helper("members");
+		$this->load->helper("shop");
 	}
 	function index(){
 		$data["products"] = getcatalogs("1","name","asc");
+		$data["menus"] = getmenu();
 		$this->load->view("shopchart/shopchart",$data);
 	}
 	function addtochart(){
@@ -47,6 +49,7 @@ class Shop extends CI_Controller{
 	function chart(){
 		$data["products"] = getcatalogs("1","name","asc");
 		$data["carts"] = getcart();
+		$data["menus"] = getmenu();
 		$this->load->view("shopchart/cart",$data);
 	}
 	function checkout(){
@@ -57,6 +60,8 @@ class Shop extends CI_Controller{
 			redirect(base_url()."shop/login");
 		}
 		$data["member"] = $member;
+		$data["menus"] = getmenu();
+
 		$this->load->view("shopchart/checkout",$data);
 	}
 	function login(){
@@ -79,6 +84,7 @@ class Shop extends CI_Controller{
 	function gallery(){
 		//$data["products"] = getfirstproducts();
 		$data["products"] = getcatalogs();
+		$data["menus"] = getmenu();
 		$this->load->view("shopchart/shop",$data);
 	}
 	function logout(){
