@@ -97,6 +97,13 @@ class Shop extends CI_Controller{
 		$data['offset'] = $offset;
 		$this->load->view("shopchart/shop",$data);
 	}
+	function singleproduct(){
+		$data["title"] = "Single Product";
+		$id = $this->uri->segment(3);
+		$data["product"] = getcatalog($id);
+		$data["menus"] = getmenu();
+		$this->load->view("shopchart/single-product",$data);
+	}
 	function logout(){
 		memberlogout();
 		$this->resetchart();
