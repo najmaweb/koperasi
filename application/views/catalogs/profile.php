@@ -98,6 +98,10 @@
                       <label>Harga Hapus</label>
                       <input type="text" class="form-control" placeholder="Harga Hapus ..." id="dellprice" value="<?php echo $obj->sellprice;?>"/>
                     </div>
+                    <div class="form-group">
+                      <label>Tampilkan di depan</label>
+                      <?php echo form_dropdown("showinfront",array("1"=>"Ya","0"=>"Tidak"),$obj->showinfront,"id='showinfront'");?>
+                    </div>
 
                     <!-- textarea -->
                     <div class="form-group">
@@ -175,6 +179,7 @@
 						dellprice:$("#dellprice").val(),
 						buyprice:$("#buyprice").val(),
 						image:$("#picture").attr("src"),
+						showinfront:$("#showinfront").val(),
 						description:$("div.nicEdit-main").html()
 					},
 					type:"post"

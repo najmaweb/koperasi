@@ -8,9 +8,14 @@ class Shop extends CI_Controller{
 		$this->load->helper("shop");
 	}
 	function index(){
-		$data["products"] = getcatalogs("1",1,8,"name","asc");
+		$data["title"] = "Gallery";
+		$offset = ($this->uri->total_segments()>2)?$this->uri->segment(3):1;
+		$data['pageamount'] = ceil(getamount()/8);
+		$data["products"] = getcatalogs('1',$offset,4,"name","asc");
+		$data["products2"] = getcatalogs('1',$offset+4,4,"name","asc");
 		$data["menus"] = getmenu();
-		$this->load->view("shopchart/shopchart",$data);
+		$data['offset'] = $offset;
+		$this->load->view("shopchart/shop",$data);
 	}
 	function addtochart(){
 		$arraydata = $this->arraydata();
@@ -54,7 +59,7 @@ class Shop extends CI_Controller{
 	}
 	function checkout(){
 		$data["title"] = "Checkout";
-		$data["products"] = getcatalogs("1","name","asc");
+		$data["products"] = getcatalogs("1",1,8,"name","asc");
 		$data["carts"] = getcart();
 		$member = memberhaslogin();
 		if(!$member){
@@ -66,7 +71,7 @@ class Shop extends CI_Controller{
 		$this->load->view("shopchart/checkout",$data);
 	}
 	function login(){
-		$data["products"] = getcatalogs("1","name","asc");
+		$data["products"] = getcatalogs("1",1,8,"name","asc");
 		$data["carts"] = getcart();
 		$data["haslogin"] = memberhaslogin();
 		$this->load->view("shopchart/login",$data);

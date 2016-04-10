@@ -35,7 +35,7 @@ class Catalogs extends CI_Controller{
 	}
 	public function update(){
 		$params = $this->input->post();
-		$query = "update catalogs set name='".$params["name"]."',image='".$params["image"]."',sellprice='".$params["sellprice"]."',dellprice='".$params["dellprice"]."',buyprice='".$params["buyprice"]."',description='".$params["description"]."' where id='".$params["id"]."'";
+		$query = "update catalogs set name='".$params["name"]."',image='".$params["image"]."',sellprice='".$params["sellprice"]."',dellprice='".$params["dellprice"]."',buyprice='".$params["buyprice"]."',showinfront='".$params["showinfront"]."',description='".$params["description"]."' where id='".$params["id"]."'";
 		$this->db->query($query);
 		echo $query;
 	}
