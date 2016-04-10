@@ -6,7 +6,7 @@
                         <ul>
                             <li><a href="#"><i class="fa fa-user"></i> My Account</a></li>
                             <li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
-                            <li><a href="<?php echo base_url();?>shop/chart"><i class="fa fa-user"></i> My Cart</a></li>
+                            <li><a href="<?php echo base_url();?>shop/cart"><i class="fa fa-user"></i> My Cart</a></li>
                             <li><a href="<?php echo base_url();?>shop/checkout"><i class="fa fa-user"></i> Checkout</a></li>
                             <li id="btnlogout" class="loginout"><a><i class="fa fa-user"></i> Logout</a></li>
                             <li id="btnlogin" class="loginout"><a><i class="fa fa-user"></i> Login</a></li>

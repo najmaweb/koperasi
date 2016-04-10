@@ -3,13 +3,13 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="logo">
-                        <h1><a href="./"><img src="<?php echo base_url();?>assets/ustora/img/logo.png"></a></h1>
+                        <h1><a href="./"><img src="<?php echo base_url();?>assets/koperasi2.png"></a></h1>
                     </div>
                 </div>
                 
                 <div class="col-sm-6">
                     <div class="shopping-item">
-                        <a href="<?php echo base_url()?>shop/chart">Cart - <span class="cart-amunt">$800</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                        <a href="<?php echo base_url()?>shop/cart">Cart - <span class="cart-amunt">$800</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
                     </div>
                 </div>
             </div>

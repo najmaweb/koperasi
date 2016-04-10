@@ -8,7 +8,7 @@ class Shop extends CI_Controller{
 		$this->load->helper("shop");
 	}
 	function index(){
-		$data["products"] = getcatalogs("1","name","asc");
+		$data["products"] = getcatalogs("1",1,8,"name","asc");
 		$data["menus"] = getmenu();
 		$this->load->view("shopchart/shopchart",$data);
 	}
@@ -46,9 +46,8 @@ class Shop extends CI_Controller{
 		$this->session->unset_userdata("product");
 		$this->session->set_userdata(array("product"=>array()));
 	}
-	function chart(){
+	function cart(){
 		$data["title"] = "Cart";
-		$data["products"] = getcatalogs("1","name","asc");
 		$data["carts"] = getcart();
 		$data["menus"] = getmenu();
 		$this->load->view("shopchart/cart",$data);
