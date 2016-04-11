@@ -1,0 +1,11 @@
+$.ajax({
+	url:"http://koperasi/shop/gettotal",
+	dataType:"json"
+})
+.done(function(res){
+	$("#cartamount").html(res.cartamount);
+	$("#productamount").html(res.productamount);
+})
+.fail(function(err){
+	console.log("heheh",err);
+});

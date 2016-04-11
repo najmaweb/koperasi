@@ -9,7 +9,7 @@
                 
                 <div class="col-sm-6">
                     <div class="shopping-item">
-                        <a href="<?php echo base_url()?>shop/cart">Cart - <span class="cart-amunt">$800</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                        <a href="<?php echo base_url()?>shop/cart">Cart - <span class="cart-amunt" id="cartamount">$800</span> <i class="fa fa-shopping-cart"></i> <span class="product-count" id="productamount">5</span></a>
                     </div>
                 </div>
             </div>

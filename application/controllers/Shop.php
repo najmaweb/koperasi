@@ -117,4 +117,8 @@ class Shop extends CI_Controller{
 			echo "hasnotlogin";
 		}
 	}
+	function gettotal(){
+		$out = gettotal();
+		echo '{"productamount":'.$out["amount"].',"cartamount":'.$out["total"].'}';
+	}
 } 

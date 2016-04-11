@@ -109,6 +109,7 @@
     <!-- Main Script -->
     <script src="js/main.js"></script>
     <script src="<?php echo base_url();?>assets/padi/loginhandler.js"></script>
+    <script src="<?php echo base_url();?>assets/padi/shop.js"></script>
     <script type="text/javascript">
 		(function($){
 			$(".add_to_cart_button").click(function(){
