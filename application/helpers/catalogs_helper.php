@@ -1,7 +1,7 @@
 <?php
 	function getcatalogs($active = '1',$offset=0,$segment=8,$orderby = "name",$order = "asc"){
 		$ci = & get_instance();
-		$query = "select id,name,image,sellprice,buyprice,dellprice,showinfront,description from catalogs ";
+		$query = "select id,name,image,sellprice,exhibit,buyprice,dellprice,showinfront,description from catalogs ";
 		$query.= "where active='".$active."' ";
 		$query.= " order by '".$orderby."' '".$order."' ";
 		$query.= " limit $offset,$segment";
@@ -10,7 +10,7 @@
 	}
 	function getcatalog($id){
 		$ci = & get_instance();
-		$query = "select id,name,image,sellprice,buyprice,dellprice,showinfront,description from catalogs ";
+		$query = "select id,name,image,sellprice,exhibit,buyprice,dellprice,showinfront,description from catalogs ";
 		$query.= "where id=".$id;
 		$result = $ci->db->query($query);
 		return $result->result()[0];
@@ -37,6 +37,15 @@
 		$query = "select id,name,image,sellprice,buyprice,dellprice,description from catalogs ";
 		$query.= "where active='".$active."' ";
 		$query.= "and showinfront='1' ";
+		$query.= " order by '".$orderby."' '".$order."'";
+		$result = $ci->db->query($query);
+		return $result->result();		
+	}
+	function getexhibits($active = '1',$orderby = "name",$order = "asc"){
+		$ci = & get_instance();
+		$query = "select id,name,image,sellprice,buyprice,dellprice,description from catalogs ";
+		$query.= "where active='".$active."' ";
+		$query.= "and exhibit='1' ";
 		$query.= " order by '".$orderby."' '".$order."'";
 		$result = $ci->db->query($query);
 		return $result->result();		

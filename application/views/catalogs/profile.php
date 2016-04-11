@@ -102,6 +102,10 @@
                       <label>Tampilkan di depan</label>
                       <?php echo form_dropdown("showinfront",array("1"=>"Ya","0"=>"Tidak"),$obj->showinfront,"id='showinfront'");?>
                     </div>
+                    <div class="form-group">
+                      <label>Tampilkan di depan (exhibit)</label>
+                      <?php echo form_dropdown("exhibit",array("1"=>"Ya","0"=>"Tidak"),$obj->exhibit,"id='exhibit'");?>
+                    </div>
 
                     <!-- textarea -->
                     <div class="form-group">
@@ -180,6 +184,7 @@
 						buyprice:$("#buyprice").val(),
 						image:$("#picture").attr("src"),
 						showinfront:$("#showinfront").val(),
+						exhibit:$("#exhibit").val(),
 						description:$("div.nicEdit-main").html()
 					},
 					type:"post"
