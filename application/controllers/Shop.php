@@ -6,6 +6,7 @@ class Shop extends CI_Controller{
 		$this->load->helper("catalogs");
 		$this->load->helper("members");
 		$this->load->helper("shop");
+		$this->load->helper("general");
 	}
 	function index(){
 		$data["title"] = "Gallery";
@@ -62,9 +63,9 @@ class Shop extends CI_Controller{
 		$data["products"] = getcatalogs("1",1,8,"name","asc");
 		$data["carts"] = getcart();
 		$member = memberhaslogin();
-		if(!$member){
+		/*if(!$member){
 			redirect(base_url()."shop/login");
-		}
+		}*/
 		$data["member"] = $member;
 		$data["menus"] = getmenu();
 
@@ -120,5 +121,10 @@ class Shop extends CI_Controller{
 	function gettotal(){
 		$out = gettotal();
 		echo '{"productamount":'.$out["amount"].',"cartamount":'.$out["total"].'}';
+	}
+	function xxx(){
+		foreach(getcountries() as $xx){
+			echo $xx->name;
+		}
 	}
 } 

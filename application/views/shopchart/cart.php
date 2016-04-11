@@ -4,12 +4,10 @@
 	<?php $this->load->view("shopchart/head");?>
   </head>
   <body>
-   <?php $this->load->view("shopchart/dialogs");?>
-<?php $this->load->view("shopchart/headerarea");?>    
-<?php $this->load->view("shopchart/brandingarea");?>    
-
-    
-<?php $this->load->view("shopchart/mainmenu");?>        
+	<?php $this->load->view("shopchart/dialogs");?>
+	<?php $this->load->view("shopchart/headerarea");?>
+	<?php $this->load->view("shopchart/brandingarea");?>
+	<?php $this->load->view("shopchart/mainmenu");?>
     <div class="product-big-title-area">
         <div class="container">
             <div class="row">
@@ -21,8 +19,8 @@
             </div>
         </div>
     </div> <!-- End Page title area -->
-    
-    
+
+
     <div class="single-product-area">
         <div class="zigzag-bottom"></div>
         <div class="container">
@@ -35,16 +33,16 @@
                             <input type="submit" value="Search">
                         </form>
                     </div>
-                    
+
                     <div class="single-sidebar">
 						<?php $this->load->view("shopchart/sidebar-product");?>
                     </div>
-                    
+
                     <div class="single-sidebar">
 						<?php $this->load->view("shopchart/sidebar-recentpost");?>
                     </div>
                 </div>
-                
+
                 <div class="col-md-8">
                     <div class="product-content-right">
                         <div class="woocommerce">
@@ -65,7 +63,7 @@
                                         <?php foreach($carts as $product){?>
                                         <tr class="cart_item">
                                             <td class="product-remove">
-                                                <a title="Remove this item" class="remove" href="#">×</a> 
+                                                <a title="Remove this item" class="remove" href="#">×</a>
                                             </td>
 
                                             <td class="product-thumbnail">
@@ -73,11 +71,11 @@
                                             </td>
 
                                             <td class="product-name">
-                                                <a href="single-product.html"><?php echo $product["product"];?></a> 
+                                                <a href="single-product.html"><?php echo $product["product"];?></a>
                                             </td>
 
                                             <td class="product-price">
-                                                <span class="amount" thisval="<?php echo $product["sellprice"];?>"><?php echo number_format($product["sellprice"],2);?></span> 
+                                                <span class="amount" thisval="<?php echo $product["sellprice"];?>"><?php echo number_format($product["sellprice"],2);?></span>
                                             </td>
 
                                             <td class="product-quantity">
@@ -89,7 +87,7 @@
                                             </td>
 
                                             <td class="product-subtotal">
-                                                <span class="amount"><?php echo number_format($product["sellprice"],2);?></span> 
+                                                <span class="amount"><?php echo number_format($product["sellprice"],2);?></span>
                                             </td>
                                         </tr>
                                         <?php }?>
@@ -146,8 +144,8 @@
 
 
                             </div>
-                        </div>                        
-                    </div>                    
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -156,20 +154,20 @@
 
 	<?php $this->load->view("shopchart/footertop");?>
 	<?php $this->load->view("shopchart/footerbottom");?>
-   
+
     <!-- Latest jQuery form server -->
     <script src="https://code.jquery.com/jquery.min.js"></script>
-    
+
     <!-- Bootstrap JS form CDN -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    
+
     <!-- jQuery sticky menu -->
     <script src="<?php echo base_url();?>assets/ustora/js/owl.carousel.min.js"></script>
     <script src="<?php echo base_url();?>assets/ustora/js/jquery.sticky.js"></script>
-    
+
     <!-- jQuery easing -->
     <script src="<?php echo base_url();?>assets/ustora/js/jquery.easing.1.3.min.js"></script>
-    
+
     <!-- Main Script -->
     <script src="<?php echo base_url();?>assets/ustora/js/main.js"></script>
     <script src="<?php echo base_url();?>assets/padi/loginhandler.js"></script>

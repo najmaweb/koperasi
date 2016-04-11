@@ -71,4 +71,12 @@
 			redirect(baseurl()."main/login");
 		}
 	}
+	function is_login(){
+		$ci = & get_instance();
+		if($ci->session->userdata("userid")){
+			return true;
+		}else{
+			return false;
+		}
+	}
 ?>
