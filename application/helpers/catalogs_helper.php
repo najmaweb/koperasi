@@ -50,6 +50,17 @@
 		$result = $ci->db->query($query);
 		return $result->result();		
 	}
+	function getrelated($id,$active = '1',$orderby = "name",$order = "asc"){
+		$ci = & get_instance();
+		$query = "select c.id,c.name,c.image,c.sellprice,c.buyprice,c.dellprice,c.description from catalogs a ";
+		$query.= "left outer join catalog_related b on b.catalog_id=a.id ";
+		$query.= "left outer join catalogs c on c.id=b.related_id ";
+		$query.= "where c.active='".$active."' ";
+		$query.= "and a.id='".$id."' ";
+		$query.= " order by '".$orderby."' '".$order."'";
+		$result = $ci->db->query($query);
+		return $result->result();		
+	}
 	function getamount(){
 		$ci = & get_instance();
 		$query = "select count(id)jml from catalogs ";
