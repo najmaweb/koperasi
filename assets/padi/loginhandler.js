@@ -8,11 +8,13 @@ $.ajax({
 	if(res==='haslogin'){
 		console.log("return true");
 		$("#btnlogout").show();
-		$("#btnlogin").hide();					
+		$("#btnlogin").hide();
+		$("#logger").hide();
 	};
 	if(res==='hasnotlogin'){
 		$("#btnlogout").hide();
 		$("#btnlogin").show();
+		$("#logger").show();
 		console.log("return false");
 	}
 })
@@ -22,7 +24,7 @@ $.ajax({
 
 $("#modallogin").click(function(){
 	console.log("login clicked");
-	
+
 	$.ajax({
 		url:hostname+"shop/signin",
 		data:{email:$("#loginemail").val(),password:$("#loginpassword").val()},
@@ -36,6 +38,7 @@ $("#modallogin").click(function(){
 		}else{
 			$("#btnlogout").show();
 			$("#btnlogin").hide();
+			$("#logger").hide();
 		}
 	})
 	.fail(function(err){

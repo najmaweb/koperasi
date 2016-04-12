@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="product-bit-title text-center">
-                        <h2>Shop</h2>
+                        <h2><?php echo shopname();?></h2>
                     </div>
                 </div>
             </div>
@@ -130,22 +130,7 @@
 					console.log("err",err);
 				});
 			});
-			$(".user-menu #btnlogin").click(function(){
-				$("#loginwindow").modal();
-			});
-			$(".user-menu #btnlogout").click(function(){
-				$.ajax({
-					url:"<?php echo base_url();?>shop/logout"
-				})
-				.done(function(res){
-					console.log("res logout",res);
-					$("#btnlogout").hide();
-					$("#btnlogin").show();
-				})
-				.fail(function(err){
-					console.log("Err",err);
-				});
-			});
+
 		}(jQuery))
     </script>
   </body>

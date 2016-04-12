@@ -108,7 +108,7 @@ class Shop extends CI_Controller{
 	function logout(){
 		memberlogout();
 		$this->resetchart();
-		redirect(base_url()."shop/gallery");
+		//redirect(base_url()."shop");
 	}
 	function checklogin(){
 		$result =  memberhaslogin();

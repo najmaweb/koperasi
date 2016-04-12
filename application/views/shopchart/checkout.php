@@ -63,7 +63,8 @@
 										}*/
 									}else{
 										?>
-										Returning customer? <a class="showlogin" data-toggle="collapse" href="#login-form-wrap" aria-expanded="false" aria-controls="login-form-wrap">Click here to login</a>
+										<!--Returning customer? <a class="showlogin" data-toggle="collapse" href="#login-form-wrap" aria-expanded="false" aria-controls="login-form-wrap">Click here to login</a>-->
+										<span id="logger">Returning customer? <a class="showlogin" >Click here to login</a></span>
 										<?php
 									}
 								?>
@@ -73,7 +74,7 @@
 								
                             </div>
 
-                            <form id="login-form-wrap" class="login collapse" method="post">
+                            <div id="login-form-wrap" class="login collapse" method="post">
 
 
                                 <p>If you have shopped with us before, please enter your details in the boxes below. If you are a new customer please proceed to the Billing &amp; Shipping section.</p>
@@ -92,7 +93,7 @@
 
 
                                 <p class="form-row">
-                                    <input type="submit" value="Login" name="login" class="button">
+                                    <input type="button" value="Login" name="login" class="button" id="btnlogin">
                                     <label class="inline" for="rememberme"><input type="checkbox" value="forever" id="rememberme" name="rememberme"> Remember me </label>
                                 </p>
                                 <p class="lost_password">
@@ -100,7 +101,7 @@
                                 </p>
 
                                 <div class="clear"></div>
-                            </form>
+                            </div>
 
                             <div class="woocommerce-info">Have a coupon? <a class="showcoupon" data-toggle="collapse" href="#coupon-collapse-wrap" aria-expanded="false" aria-controls="coupon-collapse-wrap">Click here to enter your code</a>
                             </div>
@@ -402,5 +403,10 @@
     <script src="<?php echo base_url();?>assets/ustora/js/main.js"></script>
     <script src="<?php echo base_url();?>assets/padi/loginhandler.js"></script>
     <script src="<?php echo base_url();?>assets/padi/shop.js"></script>
+    <script>
+		(function($){
+			console.log("bismillah");
+		}(jQuery))
+    </script>
   </body>
 </html>
