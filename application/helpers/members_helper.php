@@ -22,6 +22,7 @@
 				"email"=>$row->email,
 				"address"=>$row->address,
 				"city"=>$row->city,
+				"phone"=>$row->phone,
 				"img"=>$row->img,
 				"description"=>$row->description,
 				"createdate"=>$row->createdate

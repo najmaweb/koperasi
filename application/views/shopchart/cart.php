@@ -46,7 +46,7 @@
                 <div class="col-md-8">
                     <div class="product-content-right">
                         <div class="woocommerce">
-                            <form method="post" action="#">
+                            <!--<form method="post" action="#">-->
                                 <table cellspacing="0" class="shop_table cart">
                                     <thead>
                                         <tr>
@@ -98,13 +98,13 @@
                                                     <input type="text" placeholder="Coupon code" value="" id="coupon_code" class="input-text" name="coupon_code">
                                                     <input type="submit" value="Apply Coupon" name="apply_coupon" class="button">
                                                 </div>
-                                                <input type="submit" value="Update Cart" name="update_cart" class="button">
+                                                <input type="submit" value="Update Cart" name="update_cart" class="button" id="updatecart">
                                                 <input type="submit" value="Checkout" name="proceed" class="checkout-button button alt wc-forward">
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
-                            </form>
+                            <!--</form>-->
 
                             <div class="cart-collaterals">
 
@@ -209,6 +209,12 @@
 					var totalprice = that.parent().parent().next().find(".amount").html();
 					that.parent().parent().next().find(".amount").html((parseInt(itemprice)*parseInt(that.next().val())).toLocaleString());
 				}
+			});
+			$("#updatecart").click(function(){
+				console.log("bebbeb");
+				$(".cart_item").each(function(x,y){
+					
+				});
 			});
 		}(jQuery))
     </script>

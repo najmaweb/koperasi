@@ -120,7 +120,7 @@
 				console.log("test",$(this).attr("val"));
 				$.ajax({
 					url:"<?php echo base_url();?>shop/addtochart",
-					data:{product:thisproduct,sellprice:sellprice,id:myid,image:myimage},
+					data:{product:thisproduct,sellprice:sellprice,id:myid,image:myimage,amount:1},
 					type:"post"
 				})
 				.done(function(res){

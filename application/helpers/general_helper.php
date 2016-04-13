@@ -3,10 +3,10 @@ function baseurl(){
 	return "http://koperasi/";
 }
 function shopname(){
-	return "Hello Kitty";
+	return "Toko Hebat";
 }
 function shoptitle(){
-	return "Toko Hello Kitty";
+	return "Toko Hebat";
 }
 function getcountries(){
 	$ci = & get_instance();

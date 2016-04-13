@@ -11,7 +11,7 @@ class Catalogs extends CI_Controller{
 	}
 	public function index(){
 		if(islogin()){
-			$data["objs"] = getcatalogs();
+			$data["objs"] = getbackendcatalogs();
 			$this->load->view("catalogs/catalogs",$data);
 		}
 	}

@@ -1,4 +1,12 @@
 <?php
+	function getbackendcatalogs($active = '1',$orderby = "name",$order = "asc"){
+		$ci = & get_instance();
+		$query = "select id,name,image,sellprice,exhibit,buyprice,dellprice,showinfront,description from catalogs ";
+		$query.= "where active='".$active."' ";
+		$query.= " order by '".$orderby."' '".$order."' ";
+		$result = $ci->db->query($query);
+		return $result->result();
+	}
 	function getcatalogs($active = '1',$offset=0,$segment=8,$orderby = "name",$order = "asc"){
 		$ci = & get_instance();
 		$query = "select id,name,image,sellprice,exhibit,buyprice,dellprice,showinfront,description from catalogs ";

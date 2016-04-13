@@ -21,8 +21,13 @@ class Shop extends CI_Controller{
 	function addtochart(){
 		$arraydata = $this->arraydata();
 		$params = $this->input->post();
-		array_push($arraydata,array("id"=>$params["id"],"product"=>$params["product"],"sellprice"=>$params["sellprice"],"image"=>$params["image"]));
-		//$arr = array("product"=>$params["product"]);
+		array_push($arraydata,array(
+			"id"=>$params["id"],
+			"product"=>$params["product"],
+			"sellprice"=>$params["sellprice"],
+			"image"=>$params["image"],
+			"amount"=>$params["amount"]
+			));
 		$arr = array("product"=>$arraydata);
 		$this->session->set_userdata($arr);
 		echo "prodcut ".$params["product"];
