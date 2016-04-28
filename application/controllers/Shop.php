@@ -132,4 +132,11 @@ class Shop extends CI_Controller{
 			echo $xx->name;
 		}
 	}
+	function savetransaction(){
+		echo "save transaction";
+		$params = $this->input->post();
+		foreach($params as $key=>$val){
+			echo $key . " " . $val . "<br />";
+		}
+	}
 } 

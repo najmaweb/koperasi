@@ -119,7 +119,7 @@
                                 <div class="clear"></div>
                             </form>
 
-                            <form enctype="multipart/form-data" action="#" class="checkout" method="post" name="checkout">
+                            <form enctype="multipart/form-data" class="checkout" method="post" name="checkout" action="<?php echo base_url();?>shop/savetransaction">
 
                                 <div id="customer_details" class="col2-set">
                                     <div class="col-1">
@@ -389,6 +389,9 @@
     <script>
 		(function($){
 			console.log("bismillah");
+			$("#place_order").click(function(){
+				//alert("here");
+			});
 		}(jQuery))
     </script>
   </body>

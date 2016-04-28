@@ -29,6 +29,7 @@
   <body class="skin-blue">
     <div class="wrapper">
       <?php $this->load->view("commons/header");?>
+      <?php $this->load->view("catalogs/dialogs");?>
       <!-- Left side column. contains the logo and sidebar -->
 	<?php $this->load->view("commons/sidebar");?>
       <!-- Right side column. Contains the navbar and content of the page -->
@@ -71,7 +72,57 @@
                   </div><!-- /.box-body -->
               </div><!-- /.box -->
 
+
+
+              <div class="box box-primary">
+                <div class="box-header">
+                  <h3 class="box-title">Produk terkait</h3>
+                  
+                  
+                  
+                </div><!-- /.box-header -->
+                <!-- form start -->
+                  <div class="box-body">
+
+				<button class="btn btn-block btn-default btn-lg" id="btnAddRelatedProduct">Tambahkan Produk Terkait</button>
+                  <table id="tCatalog" class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th width="40%">Nama</th>
+                        <th width="25%">Keterangan</th>
+                        <th width="15%">Aksi</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+						<?php foreach($relateds as $rel){?>
+                      <tr trid="<?php echo $rel["id"];?>">
+                        <td class="tname"><?php echo $rel["name"];?></td>
+                        <td><?php echo $rel["description"];?></td>
+                        <td>Hapus</td>
+                      </tr>
+                    <?php }?>
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <th width="40%">Nama</th>
+                        <th width="25%">Keterangan</th>
+                        <th width="15%">Aksi</th>
+                      </tr>
+                    </tfoot>
+                  </table>
+
+                  </div><!-- /.box-body -->
+              </div><!-- /.box -->
+
             </div><!--/.col (left) -->
+            
+            
+
+
+
+
+            
+            
             <!-- right column -->
             <div class="col-md-6">
               <!-- general form elements disabled -->
@@ -197,6 +248,11 @@
 					console.log("Err",err);
 				});
 			});
+			$("#btnAddRelatedProduct").click(function(){
+				console.log("Add Related Product clicked");
+				$("#dAddRelated").modal();
+			});
+			$("#example1").dataTable();
 		}(jQuery))
     </script>
   </body>

@@ -29,7 +29,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <img  src="<?php echo $product->image;?>" alt="">
+                            <a href="<?php echo base_url();?>shop/singleproduct/<?php echo $product->id;?>"><img  src="<?php echo $product->image;?>" alt=""></a>
                         </div>
                         <h2><a href=""><?php echo $product->name;?></a></h2>
                         <div class="product-carousel-price">
@@ -48,7 +48,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <img  src="<?php echo $product->image;?>" alt="">
+                            <a href="<?php echo base_url();?>shop/singleproduct/<?php echo $product->id;?>"><img  src="<?php echo $product->image;?>" alt=""></a>
                         </div>
                         <h2><a href=""><?php echo $product->name;?></a></h2>
                         <div class="product-carousel-price">

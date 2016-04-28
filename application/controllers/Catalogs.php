@@ -17,6 +17,7 @@ class Catalogs extends CI_Controller{
 	}
 	public function profile(){
 		if(islogin()){
+			$data["relateds"] = array(array("id"=>"1","name"=>"AAA","description"=>"Laptop super ","action"=>""),array("id"=>"2","name"=>"BBB","description"=>"Laptop super sae","action"=>""),array("id"=>"3","name"=>"CCC","description"=>"Laptop super bagus","action"=>""));
 			$data["obj"] = getcatalog($this->uri->segment(3));
 			$this->load->view("catalogs/profile",$data);
 		}
